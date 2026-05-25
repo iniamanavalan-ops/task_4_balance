@@ -1,0 +1,209 @@
+
+#6
+
+class Animal {
+    void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        Cat c = new Cat();
+
+        d.makeSound();
+        c.makeSound();
+    }
+}
+
+
+#7
+
+class Product {
+    double price = 1000;
+
+    void calculateDiscount() {
+        System.out.println("No discount");
+    }
+}
+
+class ElectronicsProduct extends Product {
+    @Override
+    void calculateDiscount() {
+        double discount = price * 0.10;
+        System.out.println("Electronics Discount: " + discount);
+    }
+}
+
+class ClothingProduct extends Product {
+    @Override
+    void calculateDiscount() {
+        double discount = price * 0.20;
+        System.out.println("Clothing Discount: " + discount);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        ElectronicsProduct e = new ElectronicsProduct();
+        ClothingProduct c = new ClothingProduct();
+
+        e.calculateDiscount();
+        c.calculateDiscount();
+    }
+}
+
+
+#8
+
+class Doctor {
+    String specialization;
+    int patientCount;
+    double consultationFee;
+
+    void display() {
+        System.out.println("Specialization: " + specialization);
+        System.out.println("Patient Count: " + patientCount);
+        System.out.println("Consultation Fee: " + consultationFee);
+    }
+}
+
+class Surgeon extends Doctor {
+    Surgeon() {
+        specialization = "Surgeon";
+        patientCount = 25;
+        consultationFee = 1500;
+    }
+}
+
+class Cardiologist extends Doctor {
+    Cardiologist() {
+        specialization = "Cardiologist";
+        patientCount = 30;
+        consultationFee = 2000;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Surgeon s = new Surgeon();
+        Cardiologist c = new Cardiologist();
+        s.display();
+        System.out.println();
+        c.display();
+    }
+}
+
+
+
+
+
+#9
+
+abstract class Shape {
+    abstract void calculateArea();
+}
+class Circle extends Shape {
+    double radius = 5;
+    void calculateArea() {
+        double area = 3.14 * radius * radius;
+        System.out.println("Area of Circle = " + area);
+    }
+}
+class Rectangle extends Shape {
+    int length = 10;
+    int breadth = 4;
+    void calculateArea() {
+        int area = length * breadth;
+        System.out.println("Area of Rectangle = " + area);
+    }
+}
+class Triangle extends Shape {
+    int base = 6;
+    int height = 8;
+    void calculateArea() {
+        double area = 0.5 * base * height;
+        System.out.println("Area of Triangle = " + area);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Shape s1 = new Circle();
+        Shape s2 = new Rectangle();
+        Shape s3 = new Triangle();
+
+        s1.calculateArea();
+        s2.calculateArea();
+        s3.calculateArea();
+    }
+}
+
+
+
+
+#10
+
+interface Payment {
+    void pay(double amount);
+}
+
+class CreditCardPayment implements Payment {
+    public void pay(double amount) {
+        System.out.println("Paid Rs." + amount + " using Credit Card");
+    }
+}
+
+class UpiPayment implements Payment {
+    public void pay(double amount) {
+        System.out.println("Paid Rs." + amount + " using UPI");
+    }
+}
+
+class NetBankingPayment implements Payment {
+    public void pay(double amount) {
+        System.out.println("Paid Rs." + amount + " using Net Banking");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Payment p1 = new CreditCardPayment();
+        Payment p2 = new UpiPayment();
+        Payment p3 = new NetBankingPayment();
+
+        p1.pay(1000);
+        p2.pay(500);
+        p3.pay(2000);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
